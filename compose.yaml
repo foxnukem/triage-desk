@@ -1,0 +1,68 @@
+name: triagedesk
+
+services:
+  db:
+    image: docker.io/pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: triage
+      POSTGRES_USER: triage
+      POSTGRES_PASSWORD: triage
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U triage -d triage"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Containerfile
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/triage
+      DB_USER: triage
+      DB_PASSWORD: triage
+      # Ollama runs on the host by default (GPU access); see the `ollama` profile below.
+      OLLAMA_URL: ${OLLAMA_URL:-http://host.containers.internal:11434}
+      CHAT_MODEL: ${CHAT_MODEL:-qwen3:8b}
+      WIDGET_ORIGINS: ${WIDGET_ORIGINS:-http://localhost:4200}
+      EVAL_REPORTS_DIR: /app/eval/reports
+      # Laya classifier arm: model files from ./laya (scripts/get-laya-model.sh); empty dir = arm off.
+      LAYA_CHECKPOINT: /app/laya/checkpoint
+      LAYA_GRAPH: /app/laya/onnx
+      LAYA_AB_SHARE: ${LAYA_AB_SHARE:-0.0}
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    volumes:
+      - ./eval/reports:/app/eval/reports:Z
+      - ./laya:/app/laya:ro,Z
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Containerfile
+    ports:
+      - "${FRONTEND_PORT:-4200}:80"
+    depends_on:
+      - backend
+
+  ollama:
+    image: docker.io/ollama/ollama
+    profiles: ["ollama"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+    # Linux + NVIDIA: uncomment to pass the GPU through CDI.
+    # devices:
+    #   - nvidia.com/gpu=all
+
+volumes:
+  pgdata:
+  ollama:

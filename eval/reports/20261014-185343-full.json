@@ -1,0 +1,266 @@
+{
+  "runId" : 1,
+  "config" : {
+    "label" : "full",
+    "model" : "qwen3:8b",
+    "ruleRouter" : true,
+    "validation" : true,
+    "critic" : true,
+    "megaPrompt" : false,
+    "reply" : false,
+    "caseIds" : [ "t011", "t034" ]
+  },
+  "metrics" : {
+    "cases" : 2,
+    "errors" : 0,
+    "categoryAccuracy" : 1.0,
+    "categoryMacroF1" : 1.0,
+    "confusion" : {
+      "BILLING" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "SHIPPING" : {
+        "BILLING" : 0,
+        "SHIPPING" : 1,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "RETURN_REFUND" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 1,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "TECHNICAL" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "ACCOUNT" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "OTHER" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      }
+    },
+    "priorityExact" : 0.5,
+    "priorityWithin1" : 1.0,
+    "p1p2RecallNoLowerThanP2" : 1.0,
+    "beforeRuleOverrides" : {
+      "categoryAccuracy" : 1.0,
+      "categoryMacroF1" : 1.0,
+      "priorityExact" : 0.5,
+      "p1p2RecallNoLowerThanP2" : 1.0,
+      "overrides" : 0
+    },
+    "entities" : {
+      "orderId" : {
+        "fn" : 1,
+        "recall" : 0.0,
+        "tp" : 0,
+        "fp" : 0,
+        "precision" : "n/a"
+      },
+      "email" : {
+        "fn" : 0,
+        "recall" : "n/a",
+        "tp" : 0,
+        "fp" : 0,
+        "precision" : "n/a"
+      },
+      "amount" : {
+        "fn" : 0,
+        "recall" : "n/a",
+        "tp" : 0,
+        "fp" : 0,
+        "precision" : "n/a"
+      },
+      "recall" : 0.0
+    },
+    "schemaValidFirstAttempt" : 1.0,
+    "schemaValidAfterRetries" : 1.0,
+    "retriesPerCase" : 0.0,
+    "drafts" : 0,
+    "latencyP50Ms" : 26344,
+    "latencyP95Ms" : 53228,
+    "llmCallsPerCase" : 2.0,
+    "confidenceBins" : [ {
+      "from" : 0.0,
+      "to" : 0.6,
+      "cases" : 0
+    }, {
+      "from" : 0.6,
+      "to" : 0.8,
+      "cases" : 0
+    }, {
+      "from" : 0.8,
+      "to" : 0.9,
+      "cases" : 0
+    }, {
+      "from" : 0.9,
+      "to" : 0.95,
+      "cases" : 0
+    }, {
+      "from" : 0.95,
+      "to" : 1.0,
+      "cases" : 2,
+      "categoryAccuracy" : 1.0
+    } ],
+    "bySlice" : {
+      "standard" : {
+        "categoryAccuracy" : 1.0,
+        "cases" : 1,
+        "priorityExact" : 1.0
+      },
+      "hard" : {
+        "categoryAccuracy" : 1.0,
+        "cases" : 1,
+        "priorityExact" : 0.0
+      }
+    }
+  },
+  "cases" : [ {
+    "caseId" : "t011",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : "GK-104233",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-defective-goods", "kb-returns-14days", "kb-refund-timing" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 53228,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer wants to refund for order GK-104233 with a cracked screen."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 3ms", "classify#1 OK 38083ms", "extract#1 OK 15135ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t034",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking", "kb-lost-parcel" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 26344,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User is asking about their package that has been delayed for a week and mentions the tracking number was in the email."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17031ms", "extract#1 OK 9312ms", "escalation#1 OK 0ms" ]
+  } ]
+}

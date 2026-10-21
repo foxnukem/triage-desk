@@ -1,0 +1,1870 @@
+{
+  "runId" : 6,
+  "config" : {
+    "label" : "mega-prompt",
+    "model" : "qwen3:8b",
+    "ruleRouter" : false,
+    "validation" : false,
+    "critic" : false,
+    "megaPrompt" : true,
+    "reply" : false,
+    "caseIds" : [ "t001", "t002", "t004", "t006", "t009", "t011", "t014", "t016", "t019", "t021", "t022", "t024", "t026", "t027", "t029", "t031", "t032", "t033", "t034", "t035", "t041", "t043", "t045", "t047", "t049" ]
+  },
+  "metrics" : {
+    "cases" : 25,
+    "errors" : 0,
+    "categoryAccuracy" : 1.0,
+    "categoryMacroF1" : 1.0,
+    "confusion" : {
+      "BILLING" : {
+        "BILLING" : 4,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "SHIPPING" : {
+        "BILLING" : 0,
+        "SHIPPING" : 9,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "RETURN_REFUND" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 2,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "TECHNICAL" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 3,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "ACCOUNT" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 3,
+        "OTHER" : 0
+      },
+      "OTHER" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 4
+      }
+    },
+    "priorityExact" : 0.52,
+    "priorityWithin1" : 0.96,
+    "p1p2RecallNoLowerThanP2" : 1.0,
+    "beforeRuleOverrides" : {
+      "categoryAccuracy" : 1.0,
+      "categoryMacroF1" : 1.0,
+      "priorityExact" : 0.52,
+      "p1p2RecallNoLowerThanP2" : 1.0,
+      "overrides" : 0
+    },
+    "entities" : {
+      "orderId" : {
+        "tp" : 13,
+        "recall" : 1.0,
+        "fn" : 0,
+        "precision" : 0.8666666666666667,
+        "fp" : 2
+      },
+      "email" : {
+        "tp" : 3,
+        "recall" : 1.0,
+        "fn" : 0,
+        "precision" : 1.0,
+        "fp" : 0
+      },
+      "amount" : {
+        "tp" : 3,
+        "recall" : 0.75,
+        "fn" : 1,
+        "precision" : 1.0,
+        "fp" : 0
+      },
+      "precision" : 0.9047619047619048,
+      "recall" : 0.95
+    },
+    "entitiesFirstAttempt" : {
+      "orderId" : {
+        "tp" : 13,
+        "recall" : 1.0,
+        "fn" : 0,
+        "precision" : 0.8666666666666667,
+        "fp" : 2
+      },
+      "email" : {
+        "tp" : 3,
+        "recall" : 1.0,
+        "fn" : 0,
+        "precision" : 1.0,
+        "fp" : 0
+      },
+      "amount" : {
+        "tp" : 3,
+        "recall" : 0.75,
+        "fn" : 1,
+        "precision" : 1.0,
+        "fp" : 0
+      },
+      "precision" : 0.9047619047619048,
+      "recall" : 0.95
+    },
+    "hallucinatedEntitiesFirstAttempt" : 0.09090909090909091,
+    "hallucinatedEntitiesFinal" : 0.09090909090909091,
+    "schemaValidFirstAttempt" : 1.0,
+    "schemaValidAfterRetries" : 1.0,
+    "retriesPerCase" : 0.0,
+    "escalationPrecision" : 0.043478260869565216,
+    "escalationRecall" : 1.0,
+    "drafts" : 25,
+    "policyViolationRate" : 0.0,
+    "policyViolationRateBeforeCritic" : 0.0,
+    "sentimentAccuracyLabelled" : 0.5,
+    "multiIntentRecall" : 0.6666666666666666,
+    "latencyP50Ms" : 75124,
+    "latencyP95Ms" : 113570,
+    "llmCallsPerCase" : 1.0,
+    "llmCallsPerCaseWithoutRetries" : 1.0,
+    "confidenceBins" : [ {
+      "from" : 0.0,
+      "to" : 0.6,
+      "cases" : 0
+    }, {
+      "from" : 0.6,
+      "to" : 0.8,
+      "cases" : 0
+    }, {
+      "from" : 0.8,
+      "to" : 0.9,
+      "cases" : 0
+    }, {
+      "from" : 0.9,
+      "to" : 0.95,
+      "cases" : 0
+    }, {
+      "from" : 0.95,
+      "to" : 1.0,
+      "cases" : 25,
+      "categoryAccuracy" : 1.0
+    } ],
+    "bySlice" : {
+      "standard" : {
+        "cases" : 15,
+        "categoryAccuracy" : 1.0,
+        "priorityExact" : 0.6666666666666666
+      },
+      "hard" : {
+        "cases" : 7,
+        "categoryAccuracy" : 1.0,
+        "priorityExact" : 0.42857142857142855
+      },
+      "adversarial" : {
+        "cases" : 3,
+        "categoryAccuracy" : 1.0,
+        "priorityExact" : 0.0
+      }
+    }
+  },
+  "cases" : [ {
+    "caseId" : "t001",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104260",
+      "amount" : 8999,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104260",
+      "amount" : 8999,
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "billing",
+      "citedArticles" : [ "kb-double-charge" ],
+      "reply" : "Доброго дня! Ми вдячні за вашу звістку. Звіримо операції з вашого рахунку та виправимо ситуацію у найближчий час. Для додаткової інформації зверніться до нашого служби підтримки під час робочих годин. З повагою, Gadgetko Support",
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 102584,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104260",
+        "amount" : 8999,
+        "summary" : "Customer reports being charged twice for order GK-104260, requesting a refund for the duplicate charge."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня! Ми вдячні за вашу звістку. Звіримо операції з вашого рахунку та виправимо ситуацію у найближчий час. Для додаткової інформації зверніться до нашого служби підтримки під час робочих годин. З повагою, Gadgetko Support",
+        "citedArticles" : [ "kb-double-charge" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 102522ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t002",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "orderId" : null,
+      "amount" : 6799,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-payment-methods" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "amount" : 6799,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ "kb-payment-methods" ],
+      "reply" : "Доброго дня! На жаль, у нас наразі немає можливості оплачувати замовлення частинами через Monobank під час оформлення. Ви можете використовувати інші доступні способи оплати, які вказані під час оформлення замовлення. Якщо у вас є додаткові питання, зверніться до нашого сервісу підтримки. Дякуємо за зрозуміння та підтримку!\n\nGadgetko Support",
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 67603,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "amount" : 6799,
+        "summary" : "Customer wants to pay for an order in installments via Monobank, but the option is not available during checkout."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня! На жаль, у нас наразі немає можливості оплачувати замовлення частинами через Monobank під час оформлення. Ви можете використовувати інші доступні способи оплати, які вказані під час оформлення замовлення. Якщо у вас є додаткові питання, зверніться до нашого сервісу підтримки. Дякуємо за зрозуміння та підтримку!\n\nGadgetko Support",
+        "citedArticles" : [ "kb-payment-methods" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 67600ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t004",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104347",
+      "email" : "sarah.connor@example.com",
+      "amount" : 4299,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104347",
+      "email" : "sarah.connor@example.com",
+      "amount" : 4299,
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "billing",
+      "citedArticles" : [ "kb-double-charge" ],
+      "reply" : "Dear Sarah, thank you for reaching out. We are sorry to hear about the discrepancy in the charge for your order GK-104347. We will investigate this matter immediately and contact you as soon as we have more information. For now, please check your payment method for any pending refunds. If you have any further questions, feel free to contact us. Best regards, Gadgetko Support",
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 3,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 71077,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104347",
+        "email" : "sarah.connor@example.com",
+        "amount" : 4299,
+        "summary" : "Customer claims they were charged more than the advertised price for their order and requests a refund."
+      },
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Dear Sarah, thank you for reaching out. We are sorry to hear about the discrepancy in the charge for your order GK-104347. We will investigate this matter immediately and contact you as soon as we have more information. For now, please check your payment method for any pending refunds. If you have any further questions, feel free to contact us. Best regards, Gadgetko Support",
+        "citedArticles" : [ "kb-double-charge" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 71073ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t006",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104289",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104289",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-lost-parcel", "kb-order-tracking" ],
+      "reply" : "Доброго дня, дякуємо за зв’язок. Ми розуміємо вашу нерозуміння та виконаємо дії для вирішення ситуації. Для отримання додаткової інформації про статус вашого замовлення GK-104289, рекомендуємо зв’язатися з службою підтримки Нової пошти. Якщо ви не отримаєте відповіді, зверніться до нас, і ми допоможемо вирішити проблему. Дякуємо за терпіння, Gadgetko Support",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 84620,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104289",
+        "summary" : "Customer is concerned about a delayed package with tracking status not updating for 5 days."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня, дякуємо за зв’язок. Ми розуміємо вашу нерозуміння та виконаємо дії для вирішення ситуації. Для отримання додаткової інформації про статус вашого замовлення GK-104289, рекомендуємо зв’язатися з службою підтримки Нової пошти. Якщо ви не отримаєте відповіді, зверніться до нас, і ми допоможемо вирішити проблему. Дякуємо за терпіння, Gadgetko Support",
+        "citedArticles" : [ "kb-lost-parcel", "kb-order-tracking" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 84618ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t009",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104420",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-order-tracking", "kb-lost-parcel" ],
+      "reply" : "Dear Customer, thank you for reaching out. We are aware of your order GK-104420 and are currently monitoring its status. Please note that tracking information may not always reflect the most up-to-date location of your parcel. We recommend checking the tracking status again in a few hours. If the issue persists, please provide us with your email address so we can further assist you. Gadgetko Support",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 63199,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104420",
+        "summary" : "Customer is concerned about the delayed delivery of their order GK-104420, which is still marked as 'in transit' despite the expected arrival date."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Dear Customer, thank you for reaching out. We are aware of your order GK-104420 and are currently monitoring its status. Please note that tracking information may not always reflect the most up-to-date location of your parcel. We recommend checking the tracking status again in a few hours. If the issue persists, please provide us with your email address so we can further assist you. Gadgetko Support",
+        "citedArticles" : [ "kb-order-tracking", "kb-lost-parcel" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 63198ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t011",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : "GK-104233",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-defective-goods", "kb-returns-14days", "kb-refund-timing" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104233",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "returns",
+      "citedArticles" : [ "kb-defective-goods", "kb-refund-timing", "kb-return-14days" ],
+      "reply" : "Dear Customer, we are sorry to hear about the cracked screen on your order GK-104233. Please note that if the damage occurred during shipping, we will process a refund once we receive the item. If the damage is due to misuse, we may not be able to provide a refund. Kindly send us photos of the damaged screen and we will proceed accordingly. For further assistance, please contact our support team during working hours. Thank you for your understanding. Best regards, Gadgetko Support",
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 65298,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104233",
+        "summary" : "Customer is reporting a cracked screen on their order and requesting a refund."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Dear Customer, we are sorry to hear about the cracked screen on your order GK-104233. Please note that if the damage occurred during shipping, we will process a refund once we receive the item. If the damage is due to misuse, we may not be able to provide a refund. Kindly send us photos of the damaged screen and we will proceed accordingly. For further assistance, please contact our support team during working hours. Thank you for your understanding. Best regards, Gadgetko Support",
+        "citedArticles" : [ "kb-defective-goods", "kb-refund-timing", "kb-return-14days" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 65297ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t014",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "orderId" : "GK-104362",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-cancellation" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104362",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "returns",
+      "citedArticles" : [ "kb-order-cancellation" ],
+      "reply" : "Dear Customer, thank you for reaching out. We're sorry to hear you found a cheaper price for your GoPro. Since your order GK-104362 hasn't shipped yet, we can proceed with cancellation. Please note that cancellation policies are outlined in our knowledge base article kb-order-cancellation. If you have any further questions, feel free to contact us. Best regards, Gadgetko Support",
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 69073,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104362",
+        "product" : "GoPro",
+        "summary" : "Customer wants to cancel an order for a GoPro before it ships due to finding a cheaper price elsewhere."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Dear Customer, thank you for reaching out. We're sorry to hear you found a cheaper price for your GoPro. Since your order GK-104362 hasn't shipped yet, we can proceed with cancellation. Please note that cancellation policies are outlined in our knowledge base article kb-order-cancellation. If you have any further questions, feel free to contact us. Best regards, Gadgetko Support",
+        "citedArticles" : [ "kb-order-cancellation" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 69072ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t016",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "tech-support",
+      "citedArticles" : [ "kb-device-troubleshooting" ],
+      "reply" : "Вибачте за незручність. Будь ласка, перевірте, чи правильно введено пароль Wi-Fi, а також відключіть та включіть з’єднання у налаштуваннях пристрою. Якщо проблема залишається, зверніться до нашого технічного підтримку за номером телефону або через онлайн-чат. Ми допоможемо вам вирішити цю проблему.",
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 99419,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "product" : "Робот-пилосос Xiaomi",
+        "summary" : "Customer is having trouble connecting the Xiaomi robot vacuum to Wi-Fi via the app."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Вибачте за незручність. Будь ласка, перевірте, чи правильно введено пароль Wi-Fi, а також відключіть та включіть з’єднання у налаштуваннях пристрою. Якщо проблема залишається, зверніться до нашого технічного підтримку за номером телефону або через онлайн-чат. Ми допоможемо вам вирішити цю проблему.",
+        "citedArticles" : [ "kb-device-troubleshooting" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 99417ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t019",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "tech-support",
+      "citedArticles" : [ "kb-device-troubleshooting" ],
+      "reply" : "Dear Customer, thank you for reaching out. For firmware updates on your Garmin Forerunner 265, please follow the steps outlined in our troubleshooting guide. If you continue to experience issues, please contact our support team for further assistance. We apologize for any inconvenience caused. Best regards, Gadgetko Support",
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 73258,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer needs assistance updating firmware on Garmin Forerunner 265."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Dear Customer, thank you for reaching out. For firmware updates on your Garmin Forerunner 265, please follow the steps outlined in our troubleshooting guide. If you continue to experience issues, please contact our support team for further assistance. We apologize for any inconvenience caused. Best regards, Gadgetko Support",
+        "citedArticles" : [ "kb-device-troubleshooting" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 73257ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t021",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "orderId" : null,
+      "email" : "yulia.moroz@example.com",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-login" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "email" : "yulia.moroz@example.com",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "accounts",
+      "citedArticles" : [ "kb-account-login", "kb-contact-hours" ],
+      "reply" : "Вибачте за незручність, Yulia. Ми вдосконалюємо процес відновлення пароля. Будь ласка, перевірте, чи правильно введено адресу електронної пошти, і вкажіть нам, чи отримуєте ви спам або не відповідають на листи. Для додаткової допомоги зв’яжіться з нами в робочі години. Гаджетко підтримка",
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 89530,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "email" : "yulia.moroz@example.com",
+        "summary" : "Customer is unable to log in to their account and is not receiving password recovery email."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Вибачте за незручність, Yulia. Ми вдосконалюємо процес відновлення пароля. Будь ласка, перевірте, чи правильно введено адресу електронної пошти, і вкажіть нам, чи отримуєте ви спам або не відповідають на листи. Для додаткової допомоги зв’яжіться з нами в робочі години. Гаджетко підтримка",
+        "citedArticles" : [ "kb-account-login", "kb-contact-hours" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 89528ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t022",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P3",
+      "email" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-data" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P1",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "urgent",
+      "citedArticles" : [ "kb-account-data" ],
+      "reply" : "Дякуємо за звернення. Ми з Gadgetko серйозно ставимося до вашої приватності. Щоб видалити ваш акаунт та персональні дані, будь ласка, зв’яжіться з нами через підтримку або використовуйте функцію видалення акаунту в особистому кабінеті. Ми відповідемо відповідно до наших політик щодо обробки даних. Якщо у вас є додаткові питання, зверніться до нас у будь-який час. З повагою, Gadgetko Support",
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P1"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : false,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 113570,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer requests to delete their account and personal data from the website."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Дякуємо за звернення. Ми з Gadgetko серйозно ставимося до вашої приватності. Щоб видалити ваш акаунт та персональні дані, будь ласка, зв’яжіться з нами через підтримку або використовуйте функцію видалення акаунту в особистому кабінеті. Ми відповідемо відповідно до наших політик щодо обробки даних. Якщо у вас є додаткові питання, зверніться до нас у будь-який час. З повагою, Gadgetko Support",
+        "citedArticles" : [ "kb-account-data" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 113461ms", "escalation#1 INFO 0ms" ]
+  }, {
+    "caseId" : "t024",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P3",
+      "email" : "mark.evans@example.com",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-data" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "email" : "mark.evans@example.com",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "accounts",
+      "citedArticles" : [ "kb-account-data" ],
+      "reply" : "Dear Mark, to change your account email, please contact our support team with your current details so we can assist you. We recommend using a different email address for future access. Thank you for your understanding. Best regards, Gadgetko Support",
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 46202,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "email" : "mark.evans@example.com",
+        "summary" : "Customer needs to change their account email due to losing access to the old one."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Dear Mark, to change your account email, please contact our support team with your current details so we can assist you. We recommend using a different email address for future access. Thank you for your understanding. Best regards, Gadgetko Support",
+        "citedArticles" : [ "kb-account-data" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 46200ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t026",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "reply" : "Доброго дня! Наразі ми не маємо інформації про випуск iPhone 17, але залишаємося в режимі очікування оновлень від Apple. У разі появи нової моделі ми повідомимо наших клієнтів через офіційні канали. Дякуємо за звернення до Gadgetko Support!",
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 62887,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer is asking about the availability of the new iPhone 17 and the possibility of pre-ordering."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня! Наразі ми не маємо інформації про випуск iPhone 17, але залишаємося в режимі очікування оновлень від Apple. У разі появи нової моделі ми повідомимо наших клієнтів через офіційні канали. Дякуємо за звернення до Gadgetko Support!",
+        "citedArticles" : [ ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 62886ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t027",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "reply" : "Дякуємо за ваші добрі відгуки! Ми раді, що ви задоволені нашою доставкою та послугою. Якщо у вас є ще якісь питання, звертайтеся до нас! Gadgetko Support",
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "sentimentCorrect" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 74964,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer is happy with the fast delivery and polite courier."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Дякуємо за ваші добрі відгуки! Ми раді, що ви задоволені нашою доставкою та послугою. Якщо у вас є ще якісь питання, звертайтеся до нас! Gadgetko Support",
+        "citedArticles" : [ ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 74962ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t029",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "reply" : "Thank you for your inquiry. For information about business discounts and bulk orders, please contact our sales team at sales@gadgetko.com. We’d be happy to assist you further.",
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 57563,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "summary" : "A customer is asking about business discounts for a bulk order of 20 laptops."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Thank you for your inquiry. For information about business discounts and bulk orders, please contact our sales team at sales@gadgetko.com. We’d be happy to assist you further.",
+        "citedArticles" : [ ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 57561ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t031",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104513",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge", "kb-account-login" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104513",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "billing",
+      "citedArticles" : [ "kb-double-charge", "kb-account-login" ],
+      "reply" : "Вибачте за незручності. Ми вже перевіряємо ваше замовлення GK-104513 та проблему з входом у ваш акаунт. Будь ласка, зв’яжіться з нами через підтримку, щоб отримати подальшу допомогу. Дякуємо за терпіння.\n\nGadgetko Support",
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 86960,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104513",
+        "summary" : "Customer reports being charged twice for order GK-104513 and unable to log in due to incorrect password error."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Вибачте за незручності. Ми вже перевіряємо ваше замовлення GK-104513 та проблему з входом у ваш акаунт. Будь ласка, зв’яжіться з нами через підтримку, щоб отримати подальшу допомогу. Дякуємо за терпіння.\n\nGadgetko Support",
+        "citedArticles" : [ "kb-double-charge", "kb-account-login" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 86948ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t032",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104385",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking", "kb-returns-14days" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104385",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-lost-parcel", "kb-returns-14days" ],
+      "reply" : "Dear Customer, we're sorry to hear about your delayed order GK-104385 and the issue with the phone case. Please check your order status using our tracking system or contact us for further assistance. For returns, please refer to our return policy. We appreciate your patience and apologize for the inconvenience caused. Best regards, Gadgetko Support",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 83715,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104385",
+        "product" : "phone case",
+        "summary" : "The customer is reporting a delayed order and wants to return a phone case that doesn't fit."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Dear Customer, we're sorry to hear about your delayed order GK-104385 and the issue with the phone case. Please check your order status using our tracking system or contact us for further assistance. For returns, please refer to our return policy. We appreciate your patience and apologize for the inconvenience caused. Best regards, Gadgetko Support",
+        "citedArticles" : [ "kb-lost-parcel", "kb-returns-14days" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 83712ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t033",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104260",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-cancellation", "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104260",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-order-tracking", "kb-shipping-times" ],
+      "reply" : "Доброго дня! Ваше замовлення GK-104260 вже в дорозі, і ми з радістю додамо запасні фільтри до вашого замовлення. Дякуємо за звернення, і ми зв’яжемося з вами, коли замовлення буде готове до відправлення. З повагою, Gadgetko Support",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 69052,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104260",
+        "product" : "пылосос",
+        "summary" : "Customer is asking about the status of their order and whether they can add spare filters to it."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня! Ваше замовлення GK-104260 вже в дорозі, і ми з радістю додамо запасні фільтри до вашого замовлення. Дякуємо за звернення, і ми зв’яжемося з вами, коли замовлення буде готове до відправлення. З повагою, Gadgetko Support",
+        "citedArticles" : [ "kb-order-tracking", "kb-shipping-times" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 69051ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t034",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking", "kb-lost-parcel" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-123456",
+      "email" : "user@example.com",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-lost-parcel", "kb-order-tracking" ],
+      "reply" : "Доброго дня, дякуємо за зв’язок. Ми вдячні, що ви звернули увагу на це питання. Будь ласка, надішліть нам номер посилки, щоб ми могли перевірити статус вашого замовлення. Наша команда підтримки працює у режимі 24/7, і ми зробимо все можливе, щоб вирішити цю ситуацію. Дякуємо за терпіння.",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 2,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 2,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 75124,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-123456",
+        "email" : "user@example.com",
+        "summary" : "Customer is concerned about their package not arriving after a week and mentions the tracking number was sent via email."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 2,
+      "ungroundedFinal" : 2,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня, дякуємо за зв’язок. Ми вдячні, що ви звернули увагу на це питання. Будь ласка, надішліть нам номер посилки, щоб ми могли перевірити статус вашого замовлення. Наша команда підтримки працює у режимі 24/7, і ми зробимо все можливе, щоб вирішити цю ситуацію. Дякуємо за терпіння.",
+        "citedArticles" : [ "kb-lost-parcel", "kb-order-tracking" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 75094ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t035",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : "GK-104445",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting", "kb-defective-goods" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104445",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "tech-support",
+      "citedArticles" : [ "kb-device-troubleshooting", "kb-defective-goods" ],
+      "reply" : "Доброго дня, дякуємо за зв’язок. Ми провіримо вашу заявку. Якщо ваш фітнес-браслет Xiaomi не включається, рекомендуємо спробувати зарядити його, перевірити з’єднання з телефоном та відповідність версії ПО. Якщо проблема залишається, зв’яжіться з нами, щоб отримати подальшу допомогу. Дякуємо за зрозуміння, Gadgetko Support",
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 77513,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104445",
+        "product" : "фітнес-браслет Xiaomi",
+        "summary" : "Customer reports that the Xiaomi fitness band does not turn on at all."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня, дякуємо за зв’язок. Ми провіримо вашу заявку. Якщо ваш фітнес-браслет Xiaomi не включається, рекомендуємо спробувати зарядити його, перевірити з’єднання з телефоном та відповідність версії ПО. Якщо проблема залишається, зв’яжіться з нами, щоб отримати подальшу допомогу. Дякуємо за зрозуміння, Gadgetko Support",
+        "citedArticles" : [ "kb-device-troubleshooting", "kb-defective-goods" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 77512ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t041",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P3",
+      "sentiment" : "NEGATIVE",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-contact-hours" ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "reply" : "Дякуємо за ваші слова! Ми вдячні, що ви вибрали Gadgetko. Якщо ви все ще чекаєте на дзвінок, будь ласка, зв’яжіться з нами через підтримку, щоб ми могли вирішити цю справу. Майбутнє з Gadgetko! \uD83D\uDE0A",
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "sentimentCorrect" : false,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 64334,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer is thanking for the service and is waiting for a call after three weeks."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Дякуємо за ваші слова! Ми вдячні, що ви вибрали Gadgetko. Якщо ви все ще чекаєте на дзвінок, будь ласка, зв’яжіться з нами через підтримку, щоб ми могли вирішити цю справу. Майбутнє з Gadgetko! \uD83D\uDE0A",
+        "citedArticles" : [ ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 64333ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t043",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104420",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-order-tracking" ],
+      "reply" : "Доброго дня! Дякуємо за звернення. Ваше замовлення GK-104420 відправлено, але трекінг-номер ще не був надісланий. Ми вдосконалюємо систему надсилання трекінг-номерів, і ви повинні отримати його у найближчі дні. Якщо у вас виникають питання, зверніться до нас у службу підтримки. Дякуємо за терпіння! Гаджетко підтримка",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 129927,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104420",
+        "product" : "планшет Samsung",
+        "summary" : "Customer is asking about the tracking number for their order GK-104420, which has not been received via SMS."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня! Дякуємо за звернення. Ваше замовлення GK-104420 відправлено, але трекінг-номер ще не був надісланий. Ми вдосконалюємо систему надсилання трекінг-номерів, і ви повинні отримати його у найближчі дні. Якщо у вас виникають питання, зверніться до нас у службу підтримки. Дякуємо за терпіння! Гаджетко підтримка",
+        "citedArticles" : [ "kb-order-tracking" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 129923ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t045",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking", "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104420",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-order-tracking", "kb-shipping-times" ],
+      "reply" : "Доброго дня, дякуємо за вашу зв’язок. Ми вдосконалюємо доставку замовлення GK-104420, але наразі не можемо вказати точний час прибуття. Для отримання останніх даних про доставку, будь ласка, перевірте статус замовлення у вашому особистому кабінеті або зв’яжіться з нами через підтримку. Ми відповідемо вам як тільки отримаємо нову інформацію. Дякуємо за терпіння, Gadgetko Support",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 104704,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104420",
+        "summary" : "Customer is asking about the delivery status of order GK-104420 and is concerned about the delay."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня, дякуємо за вашу зв’язок. Ми вдосконалюємо доставку замовлення GK-104420, але наразі не можемо вказати точний час прибуття. Для отримання останніх даних про доставку, будь ласка, перевірте статус замовлення у вашому особистому кабінеті або зв’яжіться з нами через підтримку. Ми відповідемо вам як тільки отримаємо нову інформацію. Дякуємо за терпіння, Gadgetko Support",
+        "citedArticles" : [ "kb-order-tracking", "kb-shipping-times" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 104702ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t047",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-999999",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-order-tracking", "kb-shipping-times" ],
+      "reply" : "Доброго дня, дякуємо за звернення. Ми вдосконалюємо статус вашого замовлення GK-999999. Будь ласка, зв’яжіться з нами через підтримку, щоб отримати останні відомості. Ви завжди можете перевірити статус замовлення у вашому обліковому записі. Дякуємо за терпіння, Gadgetko Support",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 76685,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-999999",
+        "summary" : "Customer is asking about the status of their order GK-999999, which was placed a week ago and has not been processed yet."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня, дякуємо за звернення. Ми вдосконалюємо статус вашого замовлення GK-999999. Будь ласка, зв’яжіться з нами через підтримку, щоб отримати останні відомості. Ви завжди можете перевірити статус замовлення у вашому обліковому записі. Дякуємо за терпіння, Gadgetko Support",
+        "citedArticles" : [ "kb-order-tracking", "kb-shipping-times" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 76683ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t049",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104289",
+      "amount" : 500,
+      "needsHuman" : true,
+      "relevantArticles" : [ "kb-lost-parcel" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104289",
+      "needsHuman" : true,
+      "escalationReason" : "MODEL_DECISION",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-lost-parcel" ],
+      "reply" : "Доброго дня, дякуємо за зв’язок. Ми вдячні, що ви віддаєте перевагу Gadgetko. Вибачте за затримку доставки вашого замовлення GK-104289. Ми активно вирішуємо цю ситуацію. Якщо ви бажаєте, ми можемо надати знижку на наступне замовлення. Будь ласка, надішліть нам ваш email, щоб ми могли зв’язатися з вами та вирішити цей питання. Дякуємо за розуміння та підтримку, Gadgetko Support",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 92105,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "mega-prompt" : true
+      },
+      "stepSucceeded" : {
+        "mega-prompt" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104289",
+        "summary" : "Customer is requesting compensation for a delayed shipment that has taken 10 days."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "unchecked",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня, дякуємо за зв’язок. Ми вдячні, що ви віддаєте перевагу Gadgetko. Вибачте за затримку доставки вашого замовлення GK-104289. Ми активно вирішуємо цю ситуацію. Якщо ви бажаєте, ми можемо надати знижку на наступне замовлення. Будь ласка, надішліть нам ваш email, щоб ми могли зв’язатися з вами та вирішити цей питання. Дякуємо за розуміння та підтримку, Gadgetko Support",
+        "citedArticles" : [ "kb-lost-parcel" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "mega-prompt#1 OK 92104ms", "escalation#1 OK 0ms" ]
+  } ]
+}

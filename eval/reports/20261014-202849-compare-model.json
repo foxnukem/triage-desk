@@ -1,0 +1,1743 @@
+{
+  "runId" : 5,
+  "config" : {
+    "label" : "compare-model",
+    "model" : "qwen2.5:7b-instruct",
+    "ruleRouter" : true,
+    "validation" : true,
+    "critic" : true,
+    "megaPrompt" : false,
+    "reply" : false,
+    "caseIds" : [ "t001", "t002", "t004", "t006", "t009", "t011", "t014", "t016", "t019", "t021", "t022", "t024", "t026", "t027", "t029", "t031", "t032", "t033", "t034", "t035", "t041", "t043", "t045", "t047", "t049" ]
+  },
+  "metrics" : {
+    "cases" : 25,
+    "errors" : 0,
+    "categoryAccuracy" : 0.96,
+    "categoryMacroF1" : 0.9568627450980393,
+    "confusion" : {
+      "BILLING" : {
+        "BILLING" : 4,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "SHIPPING" : {
+        "BILLING" : 0,
+        "SHIPPING" : 8,
+        "RETURN_REFUND" : 1,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "RETURN_REFUND" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 2,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "TECHNICAL" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 3,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "ACCOUNT" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 3,
+        "OTHER" : 0
+      },
+      "OTHER" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 4
+      }
+    },
+    "priorityExact" : 0.88,
+    "priorityWithin1" : 1.0,
+    "p1p2RecallNoLowerThanP2" : 1.0,
+    "beforeRuleOverrides" : {
+      "categoryAccuracy" : 0.96,
+      "categoryMacroF1" : 0.9568627450980393,
+      "priorityExact" : 0.88,
+      "p1p2RecallNoLowerThanP2" : 1.0,
+      "overrides" : 0
+    },
+    "entities" : {
+      "orderId" : {
+        "fn" : 0,
+        "recall" : 1.0,
+        "tp" : 13,
+        "fp" : 0,
+        "precision" : 1.0
+      },
+      "email" : {
+        "fn" : 0,
+        "recall" : 1.0,
+        "tp" : 3,
+        "fp" : 0,
+        "precision" : 1.0
+      },
+      "amount" : {
+        "fn" : 0,
+        "recall" : 1.0,
+        "tp" : 4,
+        "fp" : 0,
+        "precision" : 1.0
+      },
+      "precision" : 1.0,
+      "recall" : 1.0
+    },
+    "entitiesFirstAttempt" : {
+      "orderId" : {
+        "fn" : 0,
+        "recall" : 1.0,
+        "tp" : 13,
+        "fp" : 1,
+        "precision" : 0.9285714285714286
+      },
+      "email" : {
+        "fn" : 0,
+        "recall" : 1.0,
+        "tp" : 3,
+        "fp" : 0,
+        "precision" : 1.0
+      },
+      "amount" : {
+        "fn" : 0,
+        "recall" : 1.0,
+        "tp" : 4,
+        "fp" : 0,
+        "precision" : 1.0
+      },
+      "precision" : 0.9523809523809523,
+      "recall" : 1.0
+    },
+    "hallucinatedEntitiesFirstAttempt" : 0.045454545454545456,
+    "hallucinatedEntitiesFinal" : 0.0,
+    "schemaValidFirstAttempt" : 0.96,
+    "schemaValidAfterRetries" : 0.96,
+    "retriesPerCase" : 0.08,
+    "escalationPrecision" : 0.0,
+    "escalationRecall" : 0.0,
+    "drafts" : 0,
+    "sentimentAccuracyLabelled" : 0.5,
+    "multiIntentRecall" : 0.3333333333333333,
+    "latencyP50Ms" : 33296,
+    "latencyP95Ms" : 75192,
+    "llmCallsPerCase" : 2.08,
+    "llmCallsPerCaseWithoutRetries" : 2.0,
+    "confidenceBins" : [ {
+      "from" : 0.0,
+      "to" : 0.6,
+      "cases" : 0
+    }, {
+      "from" : 0.6,
+      "to" : 0.8,
+      "cases" : 0
+    }, {
+      "from" : 0.8,
+      "to" : 0.9,
+      "cases" : 0
+    }, {
+      "from" : 0.9,
+      "to" : 0.95,
+      "cases" : 0
+    }, {
+      "from" : 0.95,
+      "to" : 1.0,
+      "cases" : 25,
+      "categoryAccuracy" : 0.96
+    } ],
+    "bySlice" : {
+      "standard" : {
+        "categoryAccuracy" : 1.0,
+        "cases" : 15,
+        "priorityExact" : 1.0
+      },
+      "hard" : {
+        "categoryAccuracy" : 1.0,
+        "cases" : 7,
+        "priorityExact" : 0.7142857142857143
+      },
+      "adversarial" : {
+        "categoryAccuracy" : 0.6666666666666666,
+        "cases" : 3,
+        "priorityExact" : 0.6666666666666666
+      }
+    }
+  },
+  "cases" : [ {
+    "caseId" : "t001",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104260",
+      "amount" : 8999,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 1.0,
+      "orderId" : "GK-104260",
+      "amount" : 8999,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 84226,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104260",
+        "amount" : 8999,
+        "summary" : "Замовлення GK-104260: двічі списали 8999 грн."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 INFO 3ms", "classify#1 OK 55352ms", "extract#1 OK 28739ms", "order-check#1 OK 115ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t002",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "orderId" : null,
+      "amount" : 6799,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-payment-methods" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "amount" : 6799,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 34484,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "amount" : 6799,
+        "summary" : "Потрібно сплатити замовлення частинами через monobank, але такий варіант немає. Сума 6799 грн."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 1ms", "classify#1 OK 19259ms", "extract#1 OK 15222ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t004",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104347",
+      "email" : "sarah.connor@example.com",
+      "amount" : 4299,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104347",
+      "email" : "sarah.connor@example.com",
+      "amount" : 4299,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 3,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 36259,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104347",
+        "email" : "sarah.connor@example.com",
+        "amount" : 4299,
+        "summary" : "Charged 4,299 UAH for order GK-104347, website price was lower."
+      },
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 16360ms", "extract#1 OK 19888ms", "order-check#1 OK 9ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t006",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104289",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "orderId" : "GK-104289",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 40265,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104289",
+        "summary" : "Замовлення GK-104289 не змінює статус у трекінгу Нової пошти."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 1ms", "classify#1 OK 19168ms", "extract#1 OK 21087ms", "order-check#1 OK 7ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t009",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 32964,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104420",
+        "summary" : "Order GK-104420 is late according to tracking."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 18902ms", "extract#1 OK 14052ms", "order-check#1 OK 8ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t011",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : "GK-104233",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-defective-goods", "kb-returns-14days", "kb-refund-timing" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104233",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 33027,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104233",
+        "summary" : "Замовлення прийшло з тріснутим екраном, хочу повернути гроші."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17114ms", "extract#1 OK 15904ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t014",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "orderId" : "GK-104362",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-cancellation" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "orderId" : "GK-104362",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 35007,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104362",
+        "product" : "GoPro",
+        "summary" : "Request to cancel order GK-104362 as found GoPro cheaper."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19414ms", "extract#1 OK 15586ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t016",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 29932,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Робот-пилосос Xiaomi не підключається до Wi-Fi через застосунок."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19124ms", "extract#1 OK 10807ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t019",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 26895,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User unable to update Garmin Forerunner 265 firmware via app"
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19446ms", "extract#1 OK 7449ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t021",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "orderId" : null,
+      "email" : "yulia.moroz@example.com",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-login" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 1.0,
+      "email" : "yulia.moroz@example.com",
+      "needsHuman" : false,
+      "queue" : "accounts",
+      "citedArticles" : [ ],
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 33296,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "email" : "yulia.moroz@example.com",
+        "summary" : "Не можу увійти в акаунт: невірний пароль і не отримую лист для відновлення."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17119ms", "extract#1 OK 16175ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t022",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P3",
+      "email" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-data" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "needsHuman" : false,
+      "queue" : "accounts",
+      "citedArticles" : [ ],
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 26582,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer wants to delete their account and personal data from the website."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 20159ms", "extract#1 OK 6422ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t024",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P3",
+      "email" : "mark.evans@example.com",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-data" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "email" : "mark.evans@example.com",
+      "needsHuman" : false,
+      "queue" : "accounts",
+      "citedArticles" : [ ],
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 28923,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "email" : "mark.evans@example.com",
+        "summary" : "Request to change email on account"
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 15490ms", "extract#1 OK 13432ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t026",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 23264,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer asks about new iPhone 17 availability and pre-order date."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 16452ms", "extract#1 OK 6810ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t027",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "sentimentCorrect" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 28949,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Thank you for quick delivery and polite courier! Everything liked very much."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 16376ms", "extract#1 OK 12567ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t029",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 28592,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Inquiry about business discounts for 20 laptops"
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 21392ms", "extract#1 OK 7199ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t031",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104513",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge", "kb-account-login" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 1.0,
+      "orderId" : "GK-104513",
+      "needsHuman" : true,
+      "escalationReason" : "VALIDATION_FAILED",
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : false,
+      "allStepsSucceeded" : false,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 1,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 75192,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : false
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : false
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104513",
+        "amount" : 2,
+        "summary" : "Замовлення GK-104513: двічі списали гроші, не можу увійти в акаунт з невірним паролем."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 1,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 INFO 0ms", "classify#1 OK 17219ms", "extract#1 INVALID 22841ms [amount 2 does not appear in the ticket; use null]", "extract#2 INVALID 19779ms [amount 2 does not appear in the ticket; use null]", "extract#3 INVALID 15338ms [amount 2 does not appear in the ticket; use null]", "extract#3 FAILED 0ms [amount 2 does not appear in the ticket; use null]", "order-check#1 OK 8ms", "escalation#1 INFO 0ms" ]
+  }, {
+    "caseId" : "t032",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104385",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking", "kb-returns-14days" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104385",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 37086,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104385",
+        "product" : "phone case",
+        "summary" : "Order GK-104385 is late, wants to return a phone case."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19957ms", "extract#1 OK 17121ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t033",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104260",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-cancellation", "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "orderId" : "GK-104260",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 42941,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104260",
+        "product" : "пилосос",
+        "summary" : "Замовлення GK-104260 ще не відправлене, можна додати запасні фільтри?"
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 23167ms", "extract#1 OK 19766ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t034",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking", "kb-lost-parcel" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 22038,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Waiting for my shipment for a week, email with order number in it"
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 16254ms", "extract#1 OK 5783ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t035",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : "GK-104445",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting", "kb-defective-goods" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104445",
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 32306,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104445",
+        "product" : "fitness bracelet",
+        "summary" : "Customer bought a Xiaomi fitness bracelet that won't turn on."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 15777ms", "extract#1 OK 16518ms", "order-check#1 OK 9ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t041",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P3",
+      "sentiment" : "NEGATIVE",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-contact-hours" ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "sentimentCorrect" : false,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 22569,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer thanks for good service, waiting for a call for the third week."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 16183ms", "extract#1 OK 6385ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t043",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 34807,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104420",
+        "product" : "планшет Samsung",
+        "summary" : "Замовлення GK-104420 з планшетом Samsung без tracking number."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19087ms", "extract#1 OK 15697ms", "order-check#1 OK 22ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t045",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking", "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : false,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : false,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 35064,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104420",
+        "summary" : "Customer inquiring about delivery of order GK-104420."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 20463ms", "extract#1 OK 14593ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t047",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 33659,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-999999",
+        "summary" : "Запит про замовлення GK-999999, яке оплачено тиждень тому."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "not-found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 16914ms", "extract#1 OK 16737ms", "order-check#1 OVERRIDE 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t049",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104289",
+      "amount" : 500,
+      "needsHuman" : true,
+      "relevantArticles" : [ "kb-lost-parcel" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 1.0,
+      "orderId" : "GK-104289",
+      "amount" : 500,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 38907,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104289",
+        "amount" : 500,
+        "summary" : "Замовлення GK-104289 затримано на 10 днів, клієнт вимагає компенсацію або знижку."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17659ms", "extract#1 OK 21239ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  } ]
+}

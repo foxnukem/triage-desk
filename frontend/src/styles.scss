@@ -1,0 +1,45 @@
+@use '@angular/material' as mat;
+
+html {
+  color-scheme: light;
+  @include mat.theme((
+    color: (primary: mat.$azure-palette, tertiary: mat.$orange-palette),
+    typography: Roboto,
+    density: -1,
+  ));
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+}
+
+/* Status colours shared by admin pages */
+.chip {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  background: var(--mat-sys-surface-container-high);
+  color: var(--mat-sys-on-surface);
+}
+.chip.p1, .chip.bad, .chip.FAILED, .chip.ERROR { background: #fde2e1; color: #a1180f; }
+.chip.p2, .chip.warn, .chip.INVALID, .chip.OVERRIDE { background: #fff1d6; color: #7a4b00; }
+.chip.p3, .chip.INFO { background: #e3edff; color: #1946a0; }
+.chip.p4, .chip.SKIPPED { background: #eceff1; color: #455a64; }
+.chip.good, .chip.OK { background: #dff3e4; color: #1c6b34; }
+
+.mono { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; }
+.muted { color: var(--mat-sys-on-surface-variant); }
+.pre { white-space: pre-wrap; word-break: break-word; }
+.page { padding: 20px 24px; max-width: 1280px; box-sizing: border-box; }
+.page h1 { font: var(--mat-sys-headline-small); margin: 0 0 16px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.grow { flex: 1; }
+@media (max-width: 700px) { .page { padding: 16px; } }

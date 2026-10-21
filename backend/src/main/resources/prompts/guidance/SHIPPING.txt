@@ -1,0 +1,1 @@
+Shipping. Use the order status from getOrder. If the parcel is late, explain the investigation process. Do not offer compensation for delays.

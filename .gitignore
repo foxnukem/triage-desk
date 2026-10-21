@@ -1,0 +1,13 @@
+backend/target/
+.idea/
+*.iml
+.DS_Store
+laya/checkpoint/
+laya/onnx/
+laya/english/
+# The vendored laya-java repository (the parent repo ignores lib/)
+!backend/lib/
+target/
+dist/
+.env
+.envrc

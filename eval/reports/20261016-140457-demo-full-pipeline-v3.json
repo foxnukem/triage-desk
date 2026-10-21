@@ -1,0 +1,774 @@
+{
+  "runId" : 10,
+  "config" : {
+    "label" : "demo-full-pipeline-v3",
+    "model" : "qwen3:8b",
+    "ruleRouter" : true,
+    "validation" : true,
+    "critic" : true,
+    "megaPrompt" : false,
+    "reply" : true,
+    "caseIds" : [ "t011", "t034", "t041", "t031", "t045", "t047", "t049", "t043" ],
+    "classifier" : "llm"
+  },
+  "metrics" : {
+    "cases" : 8,
+    "errors" : 0,
+    "categoryAccuracy" : 1.0,
+    "categoryMacroF1" : 1.0,
+    "confusion" : {
+      "BILLING" : {
+        "BILLING" : 1,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "SHIPPING" : {
+        "BILLING" : 0,
+        "SHIPPING" : 5,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "RETURN_REFUND" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 1,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "TECHNICAL" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "ACCOUNT" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "OTHER" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 1
+      }
+    },
+    "priorityExact" : 0.25,
+    "priorityWithin1" : 1.0,
+    "p1p2RecallNoLowerThanP2" : 1.0,
+    "beforeRuleOverrides" : {
+      "categoryAccuracy" : 1.0,
+      "categoryMacroF1" : 1.0,
+      "priorityExact" : 0.25,
+      "p1p2RecallNoLowerThanP2" : 1.0,
+      "overrides" : 0
+    },
+    "entities" : {
+      "orderId" : {
+        "fp" : 0,
+        "precision" : 1.0,
+        "fn" : 0,
+        "recall" : 1.0,
+        "tp" : 5
+      },
+      "email" : {
+        "fp" : 0,
+        "precision" : "n/a",
+        "fn" : 0,
+        "recall" : "n/a",
+        "tp" : 0
+      },
+      "amount" : {
+        "fp" : 0,
+        "precision" : 1.0,
+        "fn" : 0,
+        "recall" : 1.0,
+        "tp" : 1
+      },
+      "precision" : 1.0,
+      "recall" : 1.0
+    },
+    "entitiesFirstAttempt" : {
+      "orderId" : {
+        "fp" : 0,
+        "precision" : 1.0,
+        "fn" : 2,
+        "recall" : 0.6,
+        "tp" : 3
+      },
+      "email" : {
+        "fp" : 0,
+        "precision" : "n/a",
+        "fn" : 0,
+        "recall" : "n/a",
+        "tp" : 0
+      },
+      "amount" : {
+        "fp" : 0,
+        "precision" : 1.0,
+        "fn" : 0,
+        "recall" : 1.0,
+        "tp" : 1
+      },
+      "precision" : 1.0,
+      "recall" : 0.6666666666666666
+    },
+    "hallucinatedEntitiesFirstAttempt" : 0.0,
+    "hallucinatedEntitiesFinal" : 0.0,
+    "schemaValidFirstAttempt" : 0.75,
+    "schemaValidAfterRetries" : 1.0,
+    "retriesPerCase" : 0.75,
+    "escalationPrecision" : 1.0,
+    "escalationRecall" : 1.0,
+    "citationHitRate" : 0.75,
+    "drafts" : 8,
+    "policyViolationRate" : 0.125,
+    "policyViolationRateBeforeCritic" : 0.125,
+    "sentimentAccuracyLabelled" : 0.0,
+    "multiIntentRecall" : 1.0,
+    "latencyP50Ms" : 169005,
+    "latencyP95Ms" : 287792,
+    "llmCallsPerCase" : 4.875,
+    "llmCallsPerCaseWithoutRetries" : 4.125,
+    "confidenceBins" : [ {
+      "from" : 0.0,
+      "to" : 0.6,
+      "cases" : 0
+    }, {
+      "from" : 0.6,
+      "to" : 0.8,
+      "cases" : 0
+    }, {
+      "from" : 0.8,
+      "to" : 0.9,
+      "cases" : 0
+    }, {
+      "from" : 0.9,
+      "to" : 0.95,
+      "cases" : 0
+    }, {
+      "from" : 0.95,
+      "to" : 1.0,
+      "cases" : 8,
+      "categoryAccuracy" : 1.0
+    } ],
+    "bySlice" : {
+      "standard" : {
+        "priorityExact" : 1.0,
+        "categoryAccuracy" : 1.0,
+        "cases" : 1
+      },
+      "hard" : {
+        "priorityExact" : 0.25,
+        "categoryAccuracy" : 1.0,
+        "cases" : 4
+      },
+      "adversarial" : {
+        "priorityExact" : 0.0,
+        "categoryAccuracy" : 1.0,
+        "cases" : 3
+      }
+    }
+  },
+  "cases" : [ {
+    "caseId" : "t011",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : "GK-104233",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-defective-goods", "kb-returns-14days", "kb-refund-timing" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104233",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ "kb-defective-goods" ],
+      "reply" : "Замовлення GK-104233 прийшло з тріснутим екраном. За вашим запитом ми відправимо заміну або повернемо гроші. Для обробки потрібно фото пошкодження. Повернення здійснюється в рамках 14-денного терміну, а гроші повернутимо протягом 5 робочих днів після перевірки товару. Дякуємо за зрозуміння.",
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "citationHit" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 175006,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104233",
+        "product" : "screen",
+        "summary" : "Customer wants to return funds for a damaged order."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "draftBeforeCritic" : {
+        "text" : "Замовлення GK-104233 прийшло з тріснутим екраном. За вашим запитом ми відправимо заміну або повернемо гроші. Для обробки потрібно фото пошкодження. Повернення здійснюється в рамках 14-денного терміну, а гроші повернутимо протягом 5 робочих днів після перевірки товару. Дякуємо за зрозуміння.",
+        "citedArticles" : [ "kb-defective-goods" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ "kb-defective-goods", "kb-returns-14days", "kb-refund-timing" ]
+    },
+    "trace" : [ "rule-router#1 OK 2ms", "classify#1 OK 21242ms", "extract#1 OK 13344ms", "order-check#1 OK 47ms", "reply#1 OK 117204ms", "critic-review#1 OK 23147ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t031",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104513",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge", "kb-account-login" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104513",
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ "kb-double-charge" ],
+      "reply" : "Ви отримали дві оплати за одне замовлення GK-104513, оскільки система виявила дублікат. Для вирішення цієї ситуації, будь ласка, надішліть нам скріншот банківського транзакційного запису з обох оплат. Після перевірки дублікату, гроші будуть повернені на вашу картку протягом 5 робочих днів. Також, щодо проблеми з паролем, рекомендуємо звернутися до підтримки облікового запису для отримання допомоги.",
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "citationHit" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 169005,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User reports double charges for order GK-104513 and account login issues."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "draftBeforeCritic" : {
+        "text" : "Ви отримали дві оплати за одне замовлення GK-104513, оскільки система виявила дублікат. Для вирішення цієї ситуації, будь ласка, надішліть нам скріншот банківського транзакційного запису з обох оплат. Після перевірки дублікату, гроші будуть повернені на вашу картку протягом 5 робочих днів. Також, щодо проблеми з паролем, рекомендуємо звернутися до підтримки облікового запису для отримання допомоги.",
+        "citedArticles" : [ "kb-double-charge" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ "kb-double-charge", "kb-refund-timing", "kb-promo-codes" ]
+    },
+    "trace" : [ "rule-router#1 INFO 1ms", "classify#1 OK 36974ms", "extract#1 OK 20742ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 44ms", "reply#1 OK 90940ms", "critic-review#1 OK 20277ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t034",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking", "kb-lost-parcel" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-lost-parcel" ],
+      "reply" : "Доброго дня! Ми зрозуміли, що ви чекаєте посилки більше тижня. Для додаткової допомоги нам потрібно номер замовлення у форматі GK-XXXXXX, який ви знайдете у підтверджуючому email. Якщо посилка виявиться втраченою, ми організуємо повернення грошей або заміну товару, як вказано у наших умовах.",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "citationHit" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 109130,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User is waiting for a package for a week and mentions the tracking number was in the email."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня! Ми зрозуміли, що ви чекаєте посилки більше тижня. Для додаткової допомоги нам потрібно номер замовлення у форматі GK-XXXXXX, який ви знайдете у підтверджуючому email. Якщо посилка виявиться втраченою, ми організуємо повернення грошей або заміну товару, як вказано у наших умовах.",
+        "citedArticles" : [ "kb-lost-parcel" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ "kb-lost-parcel", "kb-defective-goods", "kb-order-tracking" ]
+    },
+    "trace" : [ "rule-router#1 OK 1ms", "classify#1 OK 26473ms", "extract#1 OK 8455ms", "reply#1 OK 59769ms", "critic-review#1 OK 14426ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t041",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P3",
+      "sentiment" : "NEGATIVE",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-contact-hours" ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ "kb-promo-codes", "kb-refund-timing" ],
+      "reply" : "Дякуємо за ваші коментарі! Ми раді, що ви задоволені сервісом. Якщо у вас є якісь пропозиції або питання, з радістю відповімо. Успіхів!",
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "sentimentCorrect" : false,
+      "citationHit" : false,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 122476,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer thanked for good service and mentioned waiting for a call for three weeks."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "draftBeforeCritic" : {
+        "text" : "Дякуємо за ваші коментарі! Ми раді, що ви задоволені сервісом. Якщо у вас є якісь пропозиції або питання, з радістю відповімо. Успіхів!",
+        "citedArticles" : [ "kb-promo-codes", "kb-refund-timing" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ "kb-invoices", "kb-promo-codes", "kb-refund-timing" ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 18006ms", "extract#1 OK 10904ms", "reply#1 OK 78596ms", "critic-review#1 OK 14965ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t043",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-order-tracking", "kb-lost-parcel" ],
+      "reply" : "Доброго дня! Замовлення GK-104420 відправлено, але ТТН ще не прийшло в SMS. Ми рекомендуємо перевірити статус у \"Моїх замовленнях\" на сайті gadgetko.ua або у додатку Nova Poshta. Якщо статус не зміниться протягом 3 днів, зв’яжіться з нами, щоб ми відкрили розслідування. Дякуємо за зрозуміння!",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "citationHit" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 128812,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104420",
+        "product" : "планшет Samsung",
+        "summary" : "Customer asks when the tracking number for their order will be sent via SMS."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "draftBeforeCritic" : {
+        "text" : "Доброго дня! Замовлення GK-104420 відправлено, але ТТН ще не прийшло в SMS. Ми рекомендуємо перевірити статус у \"Моїх замовленнях\" на сайті gadgetko.ua або у додатку Nova Poshta. Якщо статус не зміниться протягом 3 днів, зв’яжіться з нами, щоб ми відкрили розслідування. Дякуємо за зрозуміння!",
+        "citedArticles" : [ "kb-order-tracking", "kb-lost-parcel" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ "kb-order-tracking", "kb-lost-parcel", "kb-account-login" ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 20918ms", "extract#1 OK 16727ms", "order-check#1 OK 14ms", "reply#1 OK 73181ms", "critic-review#1 OK 17965ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t045",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking", "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-shipping-times" ],
+      "reply" : "Замовлення GK-104420 відправлено через Nova Poshta, і доставка має зайняти 1–3 дні. Ми вдосконалюємо доставку, і ваше замовлення буде отримане протягом наступних кількох днів. Якщо виникають питання, зверніться до нас.",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "citationHit" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : false,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 287792,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : false,
+        "extract" : true,
+        "reply" : false,
+        "critic-review" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User is asking about the delivery time of order GK-104420."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "draftBeforeCritic" : {
+        "text" : "Замовлення GK-104420 відправлено через Nova Poshta, і доставка має зайняти 1–3 дні. Ми вдосконалюємо доставку, і ваше замовлення буде отримане протягом наступних кількох днів. Якщо виникають питання, зверніться до нас.",
+        "citedArticles" : [ "kb-shipping-times" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ "kb-returns-14days", "kb-shipping-times", "kb-defective-goods" ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 INVALID 27386ms [priorityReason: size must be between 0 and 200 (got Customer is asking about order delivery status, which is a standard shipping inquiry, but the request for P1 priority and full refund indicates concern. However, no safety risk or fraud is mentioned, so P2 is appropriate.)]", "classify#2 INVALID 38177ms [priorityReason: size must be between 0 and 200 (got Customer is asking about order delivery status, which is a standard shipping inquiry. While they requested P1 priority and a full refund, there is no mention of a safety risk, fraud, or financial loss, so P2 is appropriate.)]", "classify#3 OK 28534ms", "extract#1 OK 9909ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 7ms", "reply#1 ERROR 48514ms [Failed to parse \"Замовлення GK-104420 вже відправлено. Ми вдосконалюємо доставку, щоб забезпечити швидке прибуття. Для отримання оновлених інформацій про статус доставки, будь ласка, зв’яжіться з нами через підтримку. Дякуємо за терпіння! Gadgetko Support\" (base64: \"0JfQsNC80L7QstC70LXQvdC90Y8gR0stMTA0NDIwINCy0LbQtSDQstGW0LTQv9GA0LDQstC70LXQvdC+LiDQnNC4INCy0LTQvtGB0LrQvtC90LDQu9GO0ZTQvNC+INC00L7Rg…]", "reply#2 INVALID 54841ms [you did not call searchKb; call it first and base the reply on the returned articles]", "reply#3 OK 65269ms", "critic-review#1 OK 15149ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t047",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-order-tracking" ],
+      "reply" : "Замовлення GK-999999 не знайдено в нашій системі. Будь ласка, перевірте номер замовлення та надішліть його знову, щоб ми могли допомогти. Якщо ви не знаєте номер, ви можете знайти його в підтверджуючому email або в розділі 'Мої замовлення' на сайті gadgetko.ua.",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "citationHit" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : false,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 195557,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : false,
+        "critic-review" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User is asking about their order GK-999999 which hasn't been processed yet."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "not-found",
+      "draftBeforeCritic" : {
+        "text" : "Замовлення GK-999999 не знайдено в нашій системі. Будь ласка, перевірте номер замовлення та надішліть його знову, щоб ми могли допомогти. Якщо ви не знаєте номер, ви можете знайти його в підтверджуючому email або в розділі 'Мої замовлення' на сайті gadgetko.ua.",
+        "citedArticles" : [ "kb-order-tracking" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ "kb-returns-14days", "kb-order-tracking", "kb-lost-parcel" ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 22134ms", "extract#1 OK 8636ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OVERRIDE 7ms", "reply#1 ERROR 43008ms [Failed to parse \"Ви, ймовірно, неправильно вказали номер замовлення. Будь ласка, перевірте, чи правильно ви вказали номер замовлення, і надішліть його знову. Ми з радістю допоможемо вам у вирішенні питання. Gadgetko Support\" (base64: \"0JLQuCwg0LnQvNC+0LLRltGA0L3Qviwg0L3QtdC/0YDQsNCy0LjQu9GM0L3QviDQstC60LDQt9Cw0LvQuCDQvdC+0LzQtdGAINC30LDQvNC+0LLQu9C10L3QvdGPLiDQkdGD0LTRjCDQu9Cw0YHQutCwLCDQv9C10YDQt…]", "reply#2 INVALID 42043ms [you did not call searchKb; call it first and base the reply on the returned articles]", "reply#3 OK 64221ms", "critic-review#1 OK 15504ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t049",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104289",
+      "amount" : 500,
+      "needsHuman" : true,
+      "relevantArticles" : [ "kb-lost-parcel" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104289",
+      "amount" : 500,
+      "needsHuman" : true,
+      "escalationReason" : "POLICY_EXCEPTION, POLICY_RISK",
+      "queue" : "logistics",
+      "citedArticles" : [ "kb-shipping-times" ],
+      "reply" : "Посилка замовлення GK-104289 відправлена 2026-10-02, а зараз статус — відправлена. За поточними даними, затримка не перевищує 3 дні. Якщо пошта затримується більше 3 днів порівняно з оціненим терміном доставки, ми відкриємо розслідування разом з Nova Poshta. У разі підтвердження втрати пошти, ви можете обрати безкоштовну заміну або повний повернення грошей. Гadgetko не може виплатити грошову компенсацію за затримки доставки. Дякуємо за зрозуміння.\n\nGadgetko Support",
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "citationHit" : false,
+      "policyViolation" : true,
+      "policyViolationBeforeCritic" : true,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 264083,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true,
+        "critic-rewrite" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true,
+        "reply" : true,
+        "critic-review" : true,
+        "critic-rewrite" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104289",
+        "amount" : 500,
+        "summary" : "Customer complains about a 10-day delay in their order GK-104289 and requests compensation or a discount."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "draftBeforeCritic" : {
+        "text" : "Посилка замовлення GK-104289 відправлена 2026-10-02, а зараз статус — відправлена. За поточними даними, затримка не перевищує 3 дні. Якщо пошта затримується більше 3 днів порівняно з оціненим терміном доставки, ми відкриємо розслідування разом з Nova Poshta. У разі підтвердження втрати пошти, ви можете обрати безкоштовну заміну або повний повернення грошей. Гadgetko не виплачує грошову компенсацію за затримки доставки. Дякуємо за зрозуміння.",
+        "citedArticles" : [ "kb-lost-parcel" ],
+        "promisesAction" : false
+      },
+      "policyLintBeforeCritic" : [ "compensation" ],
+      "policyLintFinal" : [ "compensation" ],
+      "retrievedArticles" : [ "kb-lost-parcel", "kb-shipping-times", "kb-defective-goods" ]
+    },
+    "trace" : [ "rule-router#1 OK 2ms", "classify#1 OK 18927ms", "extract#1 OK 19116ms", "order-check#1 OK 15ms", "reply#1 OK 115307ms", "critic-review#1 OK 24699ms", "critic-rewrite#1 OK 85908ms", "escalation#1 INFO 0ms" ]
+  } ]
+}

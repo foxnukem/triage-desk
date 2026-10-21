@@ -1,0 +1,68 @@
+spring:
+  application:
+    name: triagedesk
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/triage}
+    username: ${DB_USER:triage}
+    password: ${DB_PASSWORD:triage}
+  flyway:
+    enabled: true
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    default-property-inclusion: non_absent
+  threads:
+    virtual:
+      enabled: false
+
+server:
+  port: ${PORT:8080}
+
+langchain4j:
+  ollama:
+    chat-model:
+      base-url: ${OLLAMA_URL:http://localhost:11434}
+      model-name: ${CHAT_MODEL:qwen3:8b}
+      temperature: 0.0
+      timeout: PT600S
+      num-ctx: 8192
+      # qwen3 "thinking" multiplies latency and breaks JSON output.
+      think: false
+      # Lets AiServices pass the record's JSON Schema to Ollama as `format`.
+      supported-capabilities: RESPONSE_FORMAT_JSON_SCHEMA
+      log-requests: ${LOG_LLM:false}
+      log-responses: ${LOG_LLM:false}
+    embedding-model:
+      base-url: ${OLLAMA_URL:http://localhost:11434}
+      model-name: ${EMBEDDING_MODEL:nomic-embed-text}
+      timeout: PT120S
+
+triage:
+  max-retries: 2
+  confidence-threshold: 0.6
+  public-cors-origins: ${WIDGET_ORIGINS:http://localhost:4200}
+  pipeline:
+    rule-router: true
+    validation: true
+    critic: true
+  kb:
+    dimension: ${EMBEDDING_DIMENSION:768}
+    # nomic-embed-text expects task prefixes; set both to "" for models that don't (e.g. bge-m3).
+    query-prefix: "search_query: "
+    document-prefix: "search_document: "
+    top-k: 3
+    min-score: 0.55
+  eval:
+    reports-dir: ${EVAL_REPORTS_DIR:eval/reports}
+  # Laya encoder classifier arm (A/B). Off unless both directories exist; see laya/README.md.
+  laya:
+    checkpoint: ${LAYA_CHECKPOINT:laya/checkpoint}
+    graph: ${LAYA_GRAPH:laya/onnx}
+    # Share of live tickets triaged with the Laya classifier, stable per ticket id.
+    ab-share: ${LAYA_AB_SHARE:0.0}
+
+logging:
+  level:
+    dev.langchain4j: ${LOG_LLM_LEVEL:INFO}

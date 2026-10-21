@@ -1,0 +1,8 @@
+**/node_modules
+**/target
+frontend
+.git
+.idea
+eval/reports
+laya
+laya/english

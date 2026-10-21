@@ -1,0 +1,7 @@
+<ticket>
+{{ticket}}
+</ticket>
+<draft>
+{{draft}}
+</draft>
+{{feedback}}

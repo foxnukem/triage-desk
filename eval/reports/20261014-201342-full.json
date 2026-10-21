@@ -1,0 +1,3309 @@
+{
+  "runId" : 4,
+  "config" : {
+    "label" : "full",
+    "model" : "qwen3:8b",
+    "ruleRouter" : true,
+    "validation" : true,
+    "critic" : true,
+    "megaPrompt" : false,
+    "reply" : false
+  },
+  "metrics" : {
+    "cases" : 50,
+    "errors" : 0,
+    "categoryAccuracy" : 0.94,
+    "categoryMacroF1" : 0.9417775207248891,
+    "confusion" : {
+      "BILLING" : {
+        "BILLING" : 6,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 1
+      },
+      "SHIPPING" : {
+        "BILLING" : 0,
+        "SHIPPING" : 12,
+        "RETURN_REFUND" : 1,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 1
+      },
+      "RETURN_REFUND" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 9,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "TECHNICAL" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 9,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "ACCOUNT" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 5,
+        "OTHER" : 0
+      },
+      "OTHER" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 6
+      }
+    },
+    "priorityExact" : 0.58,
+    "priorityWithin1" : 1.0,
+    "p1Recall" : 1.0,
+    "p1p2RecallNoLowerThanP2" : 1.0,
+    "beforeRuleOverrides" : {
+      "categoryAccuracy" : 0.94,
+      "categoryMacroF1" : 0.9417775207248891,
+      "priorityExact" : 0.56,
+      "p1Recall" : 0.5,
+      "p1p2RecallNoLowerThanP2" : 1.0,
+      "overrides" : 1
+    },
+    "entities" : {
+      "orderId" : {
+        "recall" : 1.0,
+        "tp" : 28,
+        "fp" : 0,
+        "precision" : 1.0,
+        "fn" : 0
+      },
+      "email" : {
+        "recall" : 1.0,
+        "tp" : 5,
+        "fp" : 0,
+        "precision" : 1.0,
+        "fn" : 0
+      },
+      "amount" : {
+        "recall" : 0.875,
+        "tp" : 7,
+        "fp" : 0,
+        "precision" : 1.0,
+        "fn" : 1
+      },
+      "precision" : 1.0,
+      "recall" : 0.975609756097561
+    },
+    "entitiesFirstAttempt" : {
+      "orderId" : {
+        "recall" : 0.7142857142857143,
+        "tp" : 20,
+        "fp" : 3,
+        "precision" : 0.8695652173913043,
+        "fn" : 8
+      },
+      "email" : {
+        "recall" : 0.6,
+        "tp" : 3,
+        "fp" : 0,
+        "precision" : 1.0,
+        "fn" : 2
+      },
+      "amount" : {
+        "recall" : 0.875,
+        "tp" : 7,
+        "fp" : 0,
+        "precision" : 1.0,
+        "fn" : 1
+      },
+      "precision" : 0.9090909090909091,
+      "recall" : 0.7317073170731707
+    },
+    "hallucinatedEntitiesFirstAttempt" : 0.08823529411764706,
+    "hallucinatedEntitiesFinal" : 0.0,
+    "schemaValidFirstAttempt" : 0.94,
+    "schemaValidAfterRetries" : 1.0,
+    "retriesPerCase" : 0.1,
+    "escalationPrecision" : 1.0,
+    "escalationRecall" : 0.5,
+    "drafts" : 0,
+    "sentimentAccuracyLabelled" : 0.3333333333333333,
+    "multiIntentRecall" : 0.6666666666666666,
+    "latencyP50Ms" : 34054,
+    "latencyP95Ms" : 81760,
+    "llmCallsPerCase" : 2.1,
+    "llmCallsPerCaseWithoutRetries" : 2.0,
+    "confidenceBins" : [ {
+      "from" : 0.0,
+      "to" : 0.6,
+      "cases" : 0
+    }, {
+      "from" : 0.6,
+      "to" : 0.8,
+      "cases" : 0
+    }, {
+      "from" : 0.8,
+      "to" : 0.9,
+      "cases" : 0
+    }, {
+      "from" : 0.9,
+      "to" : 0.95,
+      "cases" : 0
+    }, {
+      "from" : 0.95,
+      "to" : 1.0,
+      "cases" : 50,
+      "categoryAccuracy" : 0.94
+    } ],
+    "bySlice" : {
+      "standard" : {
+        "categoryAccuracy" : 1.0,
+        "cases" : 30,
+        "priorityExact" : 0.7
+      },
+      "hard" : {
+        "categoryAccuracy" : 0.8571428571428571,
+        "cases" : 14,
+        "priorityExact" : 0.35714285714285715
+      },
+      "adversarial" : {
+        "categoryAccuracy" : 0.8333333333333334,
+        "cases" : 6,
+        "priorityExact" : 0.5
+      }
+    }
+  },
+  "cases" : [ {
+    "caseId" : "t001",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104260",
+      "amount" : 8999,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104260",
+      "amount" : 8999,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 81760,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104260",
+        "amount" : 8999,
+        "summary" : "User claims two charges of 8999 грн were processed for order GK-104260."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 INFO 4ms", "classify#1 OK 53728ms", "extract#1 OK 27933ms", "order-check#1 OK 84ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t002",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "orderId" : null,
+      "amount" : 6799,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-payment-methods" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "amount" : 6799,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : false,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 2,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 101455,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : false
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-123456",
+        "email" : "user@example.com",
+        "product" : "order",
+        "amount" : 6799,
+        "summary" : "User wants to pay for an order in installments via Monobank but the option is not available."
+      },
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 2,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 1ms", "classify#1 OK 26649ms", "extract#1 INVALID 25353ms [orderId \"GK-123456\" does not appear in the ticket; use null if there is no order number, email \"user@example.com\" does not appear in the ticket; use null]", "extract#2 INVALID 29913ms [orderId \"GK-123456\" does not appear in the ticket; use null if there is no order number, email \"user@example.com\" does not appear in the ticket; use null]", "extract#3 OK 19536ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t003",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "orderId" : "GK-104486",
+      "email" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-invoices" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104486",
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 55319,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104486",
+        "summary" : "Request for invoice and expense receipt for order GK-104486."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 1ms", "classify#1 OK 31304ms", "extract#1 OK 24003ms", "order-check#1 OK 10ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t004",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104347",
+      "email" : "sarah.connor@example.com",
+      "amount" : 4299,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104347",
+      "email" : "sarah.connor@example.com",
+      "amount" : 4299,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 3,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 55072,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104347",
+        "email" : "sarah.connor@example.com",
+        "amount" : 4299,
+        "summary" : "Customer was charged 4,299 UAH for order GK-104347 but claims the website price was lower."
+      },
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 27332ms", "extract#1 OK 27730ms", "order-check#1 OK 7ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t005",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "orderId" : "GK-104302",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-invoices" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104302",
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 42527,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User needs to download a receipt for order GK-104302 for their company expense report."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 26209ms", "extract#1 OK 16307ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 9ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t006",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104289",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104289",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 43535,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer is asking about the status of their package from order GK-104289 which has not updated in the tracking for 5 days."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 26530ms", "extract#1 OK 16996ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 8ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t007",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P4",
+      "orderId" : null,
+      "amount" : 2000,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 41770,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User asks about delivery time to Lviv and if delivery is free for orders over 2000 UAH."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 27531ms", "extract#1 OK 14237ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t008",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104486",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-cancellation" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104486",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 44778,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer wants to change delivery address for order GK-104486 to branch #12 instead of #5."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 29693ms", "extract#1 OK 15077ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t009",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 34668,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Order GK-104420 is still in transit and hasn't arrived yet."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 24635ms", "extract#1 OK 10025ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t010",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P4",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 24282,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer asks about shipping to Poland and wants to order a Kindle for their sister in Krakow."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 16981ms", "extract#1 OK 7300ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t011",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : "GK-104233",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-defective-goods", "kb-returns-14days", "kb-refund-timing" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104233",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 28257,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104233",
+        "product" : "screen",
+        "summary" : "Customer wants to return funds for a damaged order."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17105ms", "extract#1 OK 11144ms", "order-check#1 OK 7ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t012",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "orderId" : "GK-104378",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-returns-14days" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104378",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 34328,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104378",
+        "product" : "AirPods Pro 2",
+        "summary" : "Customer wants to return AirPods Pro 2 that don't fit properly."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 18899ms", "extract#1 OK 15421ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t013",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : "GK-104451",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-refund-timing" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104451",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 28083,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer returned goods from order GK-104451 two weeks ago and is asking when the refund will be processed."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17954ms", "extract#1 OK 10121ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t014",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "orderId" : "GK-104362",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-cancellation" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104362",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 31097,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104362",
+        "product" : "GoPro",
+        "summary" : "Customer wants to cancel order GK-104362 due to finding a cheaper price elsewhere."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17639ms", "extract#1 OK 13450ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t015",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : "GK-104528",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-defective-goods" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104528",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 31098,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104528",
+        "product" : "Kindle Paperwhite",
+        "summary" : "The Kindle Paperwhite from order GK-104528 has dead pixels across the screen."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 16574ms", "extract#1 OK 14516ms", "order-check#1 OK 7ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t016",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 35426,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Robot vacuum Xiaomi не connects to Wi-Fi via app, tried several times."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 23360ms", "extract#1 OK 12065ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t017",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : "GK-104277",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-warranty", "kb-device-troubleshooting" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104277",
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 50045,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104277",
+        "product" : "Apple Watch SE",
+        "summary" : "Customer's Apple Watch SE stopped charging and does not respond to charging."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 30188ms", "extract#1 OK 19847ms", "order-check#1 OK 8ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t018",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P1",
+      "orderId" : "GK-104339",
+      "needsHuman" : true,
+      "relevantArticles" : [ "kb-device-troubleshooting", "kb-warranty" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P1",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104339",
+      "needsHuman" : true,
+      "escalationReason" : "P1_PRIORITY",
+      "queue" : "urgent",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P1"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 48900,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104339",
+        "product" : "Anker PowerBank",
+        "summary" : "User is experiencing issues with a swollen and overheating Anker PowerBank during charging."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 INFO 0ms", "classify#1 OK 29037ms", "extract#1 OK 19852ms", "order-check#1 OK 8ms", "escalation#1 INFO 0ms" ]
+  }, {
+    "caseId" : "t019",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 42352,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User needs help updating firmware on Garmin Forerunner 265 due to update failure."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 30241ms", "extract#1 OK 12110ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t020",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : "GK-104302",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104302",
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 46507,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104302",
+        "product" : "Sony WH-1000XM5 headphones",
+        "summary" : "Bluetooth disconnects every few minutes"
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 29609ms", "extract#1 OK 16889ms", "order-check#1 OK 8ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t021",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "orderId" : null,
+      "email" : "yulia.moroz@example.com",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-login" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "email" : "yulia.moroz@example.com",
+      "needsHuman" : false,
+      "queue" : "accounts",
+      "citedArticles" : [ ],
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 44236,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User cannot log in due to incorrect password and recovery email not arriving."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 28747ms", "extract#1 OK 15487ms", "pattern-fill#1 OVERRIDE 0ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t022",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P3",
+      "email" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-data" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "accounts",
+      "citedArticles" : [ ],
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 25318,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User wants to delete their account and personal data from the site."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 18106ms", "extract#1 OK 7211ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t023",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P1",
+      "orderId" : null,
+      "needsHuman" : true,
+      "relevantArticles" : [ "kb-account-login" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P1",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "needsHuman" : true,
+      "escalationReason" : "P1_PRIORITY",
+      "queue" : "urgent",
+      "citedArticles" : [ ],
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 28835,
+    "ruleOverride" : {
+      "ruleId" : "account-compromise",
+      "reason" : "possible account compromise",
+      "matched" : "хтось змінив",
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P2",
+      "categoryChanged" : false,
+      "priorityRaised" : true
+    },
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User received an order for a laptop they did not place and someone changed their phone number."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 INFO 0ms", "classify#1 OK 18317ms", "priority-rules#1 OVERRIDE 0ms", "extract#1 OK 10518ms", "escalation#1 INFO 0ms" ]
+  }, {
+    "caseId" : "t024",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P3",
+      "email" : "mark.evans@example.com",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-data" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "email" : "mark.evans@example.com",
+      "needsHuman" : false,
+      "queue" : "accounts",
+      "citedArticles" : [ ],
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 46939,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User wants to change their account email as they no longer have access to the old one."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 31633ms", "extract#1 OK 15305ms", "pattern-fill#1 OVERRIDE 0ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t025",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "email" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-account-login" ]
+    },
+    "actual" : {
+      "category" : "ACCOUNT",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "accounts",
+      "citedArticles" : [ ],
+      "modelCategory" : "ACCOUNT",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 23926,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User is experiencing account lockout after few login attempts."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17800ms", "extract#1 OK 6125ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t026",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 30667,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User asks about the availability of new iPhone 17 and pre-order dates."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 22914ms", "extract#1 OK 7753ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t027",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "sentimentCorrect" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 26734,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer thanked for quick delivery and polite courier, and expressed satisfaction."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19930ms", "extract#1 OK 6803ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t028",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 30987,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User asks if there is a store in Kyiv to view the TV in person before buying."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 21969ms", "extract#1 OK 9017ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t029",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 27994,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer asks about business discounts for bulk order of 20 laptops."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19563ms", "extract#1 OK 8430ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t030",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-contact-hours" ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 25652,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User prefers to call for support instead of writing."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19873ms", "extract#1 OK 5777ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t031",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104513",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge", "kb-account-login" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104513",
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 32450,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User reports double charges for order GK-104513 and account login issues."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 INFO 0ms", "classify#1 OK 22976ms", "extract#1 OK 9467ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t032",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104385",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking", "kb-returns-14days" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : true,
+      "confidence" : 0.95,
+      "orderId" : "GK-104385",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : false,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : false,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 33956,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104385",
+        "product" : "phone case",
+        "summary" : "Customer reports order GK-104385 is late and wants to return a phone case."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19255ms", "extract#1 OK 14694ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t033",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104260",
+      "multiIntent" : true,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-cancellation", "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104260",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 34054,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104260",
+        "product" : "пылосос",
+        "summary" : "User asks about order status and requests to add spare filters."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19438ms", "extract#1 OK 14601ms", "order-check#1 OK 13ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t034",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking", "kb-lost-parcel" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 26768,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User is waiting for a package that has been delayed for a week."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 18875ms", "extract#1 OK 7892ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t035",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : "GK-104445",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting", "kb-defective-goods" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104445",
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 32773,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104445",
+        "product" : "fitness band Xiaomi",
+        "summary" : "Customer reports fitness band Xiaomi does not turn on."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 21183ms", "extract#1 OK 11582ms", "order-check#1 OK 7ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t036",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "orderId" : "GK-104318",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-returns-14days", "kb-defective-goods" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104318",
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 34520,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104318",
+        "product" : "phone",
+        "summary" : "Customer received the wrong phone color and wants to exchange it."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 1ms", "classify#1 OK 20618ms", "extract#1 OK 13891ms", "order-check#1 OK 7ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t037",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "email" : "t.lysenko@example.com",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "email" : "t.lysenko@example.com",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 33691,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "email" : "t.lysenko@example.com",
+        "product" : "Lenovo laptop",
+        "summary" : "Customer ordered a Lenovo laptop last week but hasn't received any SMS with the TTN number."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 18988ms", "extract#1 OK 14702ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t038",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : null,
+      "email" : "tom.walker@example.com",
+      "amount" : 10999,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-refund-timing" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "email" : "tom.walker@example.com",
+      "amount" : 10999,
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : false,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 1,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 52999,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : false
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-123456",
+        "email" : "tom.walker@example.com",
+        "product" : "earbuds",
+        "amount" : 10999,
+        "summary" : "User is waiting for a refund of 10,999 UAH after returning earbuds."
+      },
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 1,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17928ms", "extract#1 INVALID 17525ms [orderId \"GK-123456\" does not appear in the ticket; use null if there is no order number]", "extract#2 OK 17542ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t039",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : "GK-104356",
+      "amount" : 21999,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-warranty" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104356",
+      "amount" : 21999,
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 68908,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104356",
+        "product" : "Samsung 55 дюймів",
+        "amount" : 21999,
+        "summary" : "Customer reports vertical lines on TV screen after 3 weeks of use."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 1ms", "classify#1 OK 37936ms", "extract#1 OK 30961ms", "order-check#1 OK 8ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t040",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : "GK-104404",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-warranty", "kb-device-troubleshooting" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104404",
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 44569,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Laptop overheats and shuts down during gaming, concerns about hardware defect and warranty repair."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 28675ms", "extract#1 OK 15884ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 8ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t041",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "OTHER",
+      "priority" : "P3",
+      "sentiment" : "NEGATIVE",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-contact-hours" ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "sentimentCorrect" : false,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 29086,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer thanked for good service and mentioned waiting for a call for the third week."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 20293ms", "extract#1 OK 8792ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t042",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104468",
+      "sentiment" : "NEGATIVE",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P4",
+      "sentiment" : "POSITIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104468",
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P4"
+    },
+    "scores" : {
+      "categoryCorrect" : false,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "sentimentCorrect" : false,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : false,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 36839,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104468",
+        "product" : "PS5",
+        "summary" : "Customer ordered a PS5 with order number GK-104468 for their son's birthday."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 21187ms", "extract#1 OK 15645ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t043",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 32231,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104420",
+        "product" : "планшет Samsung",
+        "summary" : "Customer asks when the tracking number for their order will be sent via SMS."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19265ms", "extract#1 OK 12959ms", "order-check#1 OK 6ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t044",
+    "slice" : "hard",
+    "expected" : {
+      "category" : "TECHNICAL",
+      "priority" : "P3",
+      "orderId" : "GK-104378",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-device-troubleshooting", "kb-warranty", "kb-defective-goods" ]
+    },
+    "actual" : {
+      "category" : "TECHNICAL",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104378",
+      "needsHuman" : false,
+      "queue" : "tech-support",
+      "citedArticles" : [ ],
+      "modelCategory" : "TECHNICAL",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 35741,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104378",
+        "product" : "AirPods Pro case",
+        "summary" : "User's AirPods Pro case isn't charging, battery stays at 0%."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19836ms", "extract#1 OK 15892ms", "order-check#1 OK 10ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t045",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking", "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104420",
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : false,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 91807,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : false,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User is asking about the delivery time of order GK-104420."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 INVALID 28368ms [priorityReason: size must be between 0 and 200 (got Customer is asking about order delivery status, which is a standard shipping inquiry, but the request for P1 priority and refund suggests underlying concern. However, no safety risk or fraud is indicated.)]", "classify#2 INVALID 27782ms [priorityReason: size must be between 0 and 200 (got Customer is asking about order delivery status, which is a standard shipping inquiry, but the request for P1 priority and refund suggests underlying concern. However, no safety risk or fraud is indicated.)]", "classify#3 OK 24217ms", "extract#1 OK 11429ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OK 8ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t046",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-refund-timing" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 30430,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Refund approved"
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 18294ms", "extract#1 OK 12136ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t047",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 31089,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User is asking about their order GK-999999 which hasn't been processed yet."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "not-found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 21666ms", "extract#1 OK 9415ms", "pattern-fill#1 OVERRIDE 0ms", "order-check#1 OVERRIDE 7ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t048",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-defective-goods" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 30727,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-777123",
+        "product" : "screen",
+        "summary" : "Order GK-777123 arrived broken with a shattered screen."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "not-found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 17761ms", "extract#1 OK 12958ms", "order-check#1 OVERRIDE 7ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t049",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104289",
+      "amount" : 500,
+      "needsHuman" : true,
+      "relevantArticles" : [ "kb-lost-parcel" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104289",
+      "amount" : 500,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 31385,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104289",
+        "amount" : 500,
+        "summary" : "Customer complains about delayed package and requests compensation or discount."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19046ms", "extract#1 OK 12330ms", "order-check#1 OK 7ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t050",
+    "slice" : "adversarial",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "orderId" : "GK-104473",
+      "amount" : 4000,
+      "needsHuman" : true,
+      "relevantArticles" : [ "kb-promo-codes" ]
+    },
+    "actual" : {
+      "category" : "OTHER",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104473",
+      "amount" : 4000,
+      "needsHuman" : false,
+      "queue" : "general",
+      "citedArticles" : [ ],
+      "modelCategory" : "OTHER",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : false,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : false,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : false,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 35649,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104473",
+        "product" : "MacBook Air M3",
+        "amount" : 4000,
+        "summary" : "Customer requests refund for price difference on MacBook Air M3."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 20206ms", "extract#1 OK 15435ms", "order-check#1 OK 7ms", "escalation#1 OK 0ms" ]
+  } ]
+}

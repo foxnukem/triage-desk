@@ -1,0 +1,644 @@
+{
+  "runId" : 2,
+  "config" : {
+    "label" : "full",
+    "model" : "qwen3:8b",
+    "ruleRouter" : true,
+    "validation" : true,
+    "critic" : true,
+    "megaPrompt" : false,
+    "reply" : false,
+    "caseIds" : [ "t011", "t001", "t003", "t004", "t005", "t006", "t002", "t007" ]
+  },
+  "metrics" : {
+    "cases" : 8,
+    "errors" : 0,
+    "categoryAccuracy" : 1.0,
+    "categoryMacroF1" : 1.0,
+    "confusion" : {
+      "BILLING" : {
+        "BILLING" : 5,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "SHIPPING" : {
+        "BILLING" : 0,
+        "SHIPPING" : 2,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "RETURN_REFUND" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 1,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "TECHNICAL" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "ACCOUNT" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      },
+      "OTHER" : {
+        "BILLING" : 0,
+        "SHIPPING" : 0,
+        "RETURN_REFUND" : 0,
+        "TECHNICAL" : 0,
+        "ACCOUNT" : 0,
+        "OTHER" : 0
+      }
+    },
+    "priorityExact" : 0.75,
+    "priorityWithin1" : 1.0,
+    "p1p2RecallNoLowerThanP2" : 1.0,
+    "beforeRuleOverrides" : {
+      "categoryAccuracy" : 1.0,
+      "categoryMacroF1" : 1.0,
+      "priorityExact" : 0.75,
+      "p1p2RecallNoLowerThanP2" : 1.0,
+      "overrides" : 0
+    },
+    "entities" : {
+      "orderId" : {
+        "precision" : 1.0,
+        "fp" : 0,
+        "tp" : 3,
+        "recall" : 0.5,
+        "fn" : 3
+      },
+      "email" : {
+        "precision" : 1.0,
+        "fp" : 0,
+        "tp" : 1,
+        "recall" : 1.0,
+        "fn" : 0
+      },
+      "amount" : {
+        "precision" : 1.0,
+        "fp" : 0,
+        "tp" : 2,
+        "recall" : 0.5,
+        "fn" : 2
+      },
+      "precision" : 1.0,
+      "recall" : 0.5454545454545454
+    },
+    "hallucinatedEntitiesFirstAttempt" : 0.0,
+    "hallucinatedEntitiesFinal" : 0.0,
+    "schemaValidFirstAttempt" : 1.0,
+    "schemaValidAfterRetries" : 1.0,
+    "retriesPerCase" : 0.0,
+    "drafts" : 0,
+    "latencyP50Ms" : 31540,
+    "latencyP95Ms" : 88157,
+    "llmCallsPerCase" : 2.0,
+    "confidenceBins" : [ {
+      "from" : 0.0,
+      "to" : 0.6,
+      "cases" : 0
+    }, {
+      "from" : 0.6,
+      "to" : 0.8,
+      "cases" : 0
+    }, {
+      "from" : 0.8,
+      "to" : 0.9,
+      "cases" : 0
+    }, {
+      "from" : 0.9,
+      "to" : 0.95,
+      "cases" : 0
+    }, {
+      "from" : 0.95,
+      "to" : 1.0,
+      "cases" : 8,
+      "categoryAccuracy" : 1.0
+    } ],
+    "bySlice" : {
+      "standard" : {
+        "priorityExact" : 0.75,
+        "cases" : 8,
+        "categoryAccuracy" : 1.0
+      }
+    }
+  },
+  "cases" : [ {
+    "caseId" : "t001",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104260",
+      "amount" : 8999,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104260",
+      "amount" : 8999,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 2,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 45633,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104260",
+        "amount" : 8999,
+        "summary" : "Customer claims two charges of 8999 грн were processed for order GK-104260."
+      },
+      "entitiesFirstAttempt" : 2,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 INFO 2ms", "classify#1 OK 19971ms", "extract#1 OK 25604ms", "order-check#1 OK 48ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t002",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "orderId" : null,
+      "amount" : 6799,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-payment-methods" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 40927,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User wants to pay for an order in installments via Monobank but the option is not available during checkout."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 1ms", "classify#1 OK 24353ms", "extract#1 OK 16571ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t003",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "orderId" : "GK-104486",
+      "email" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-invoices" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104486",
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 1,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 88157,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104486",
+        "product" : "expense receipt",
+        "summary" : "Request for invoice and expense receipt for order GK-104486."
+      },
+      "entitiesFirstAttempt" : 1,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 3ms", "classify#1 OK 49739ms", "extract#1 OK 38404ms", "order-check#1 OK 10ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t004",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "orderId" : "GK-104347",
+      "email" : "sarah.connor@example.com",
+      "amount" : 4299,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-double-charge" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "orderId" : "GK-104347",
+      "email" : "sarah.connor@example.com",
+      "amount" : 4299,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 3,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 36182,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "orderId" : "GK-104347",
+        "email" : "sarah.connor@example.com",
+        "amount" : 4299,
+        "summary" : "Customer was charged more than the website price for an order and requests a refund."
+      },
+      "entitiesFirstAttempt" : 3,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "found",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19319ms", "extract#1 OK 16774ms", "order-check#1 OK 87ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t005",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "orderId" : "GK-104302",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-invoices" ]
+    },
+    "actual" : {
+      "category" : "BILLING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "billing",
+      "citedArticles" : [ ],
+      "modelCategory" : "BILLING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 26765,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User needs to download a receipt for their order GK-104302."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 18048ms", "extract#1 OK 8715ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t006",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "orderId" : "GK-104289",
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-lost-parcel", "kb-order-tracking" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 28868,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "The package from order GK-104289 has not updated its status in Nova Poshta tracking for 5 days."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 18233ms", "extract#1 OK 10633ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t007",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "SHIPPING",
+      "priority" : "P4",
+      "orderId" : null,
+      "amount" : 2000,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-shipping-times" ]
+    },
+    "actual" : {
+      "category" : "SHIPPING",
+      "priority" : "P3",
+      "sentiment" : "NEUTRAL",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "logistics",
+      "citedArticles" : [ ],
+      "modelCategory" : "SHIPPING",
+      "modelPriority" : "P3"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : false,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : false
+    },
+    "latencyMs" : 31540,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "User asks about delivery time to Lviv and if delivery is free for orders over 2000 UAH."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 20857ms", "extract#1 OK 10682ms", "escalation#1 OK 0ms" ]
+  }, {
+    "caseId" : "t011",
+    "slice" : "standard",
+    "expected" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "orderId" : "GK-104233",
+      "amount" : null,
+      "needsHuman" : false,
+      "relevantArticles" : [ "kb-defective-goods", "kb-returns-14days", "kb-refund-timing" ]
+    },
+    "actual" : {
+      "category" : "RETURN_REFUND",
+      "priority" : "P2",
+      "sentiment" : "NEGATIVE",
+      "multiIntent" : false,
+      "confidence" : 0.95,
+      "needsHuman" : false,
+      "queue" : "returns",
+      "citedArticles" : [ ],
+      "modelCategory" : "RETURN_REFUND",
+      "modelPriority" : "P2"
+    },
+    "scores" : {
+      "categoryCorrect" : true,
+      "priorityExact" : true,
+      "priorityWithin1" : true,
+      "policyViolation" : false,
+      "policyViolationBeforeCritic" : false,
+      "escalationCorrect" : true,
+      "allStepsValidFirstAttempt" : true,
+      "allStepsSucceeded" : true,
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "entitiesFinal" : 0,
+      "ungroundedFinal" : 0,
+      "modelCategoryCorrect" : true,
+      "modelPriorityExact" : true
+    },
+    "latencyMs" : 27718,
+    "diagnostics" : {
+      "firstAttemptValid" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "stepSucceeded" : {
+        "classify" : true,
+        "extract" : true
+      },
+      "firstExtraction" : {
+        "summary" : "Customer wants to refund for order GK-104233 with cracked screen."
+      },
+      "entitiesFirstAttempt" : 0,
+      "ungroundedFirstAttempt" : 0,
+      "ungroundedFinal" : 0,
+      "orderCheck" : "none",
+      "policyLintBeforeCritic" : [ ],
+      "policyLintFinal" : [ ],
+      "retrievedArticles" : [ ]
+    },
+    "trace" : [ "rule-router#1 OK 0ms", "classify#1 OK 19267ms", "extract#1 OK 8450ms", "escalation#1 OK 0ms" ]
+  } ]
+}
